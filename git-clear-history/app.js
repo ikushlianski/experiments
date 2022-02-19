@@ -1,3 +1,3 @@
 const a = 'data'
 
-export const b = 'some' + a;
+export const b = 'some ***REMOVED*** ' + a;
