@@ -1,25 +1,24 @@
-import {useEffect, useState} from 'react';
-
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [username, setUsername] = useState(null);
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [username, setUsername] = React.useState(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const fetchUser = async () => {
       const result = await fetch('/user');
 
       return await result.json();
     };
 
-    const data = fetchUser().then(() => {
+    fetchUser().then((data) => {
       console.log('data', data);
       setUsername(data.username);
-      setLoggedIn(true);
+      setLoggedIn(Boolean(data.username));
     }).catch((e) => {
-
+      console.log('error when fetching user', e);
       console.error(e);
 
       setUsername(null);
@@ -38,7 +37,7 @@ function App() {
       const data = await result.json();
 
       setUsername(data.username);
-      setLoggedIn(true);
+      setLoggedIn(Boolean(data.username));
     } catch (e) {
       console.log('error logging in', e);
 

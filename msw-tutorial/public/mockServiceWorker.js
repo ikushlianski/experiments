@@ -9,7 +9,7 @@
  */
 
 const INTEGRITY_CHECKSUM = '02f4ad4a2797f85668baf196e553d929'
-const bypassHeaderName = 'x-msw-bypass'
+const bypassHeaderName = 'x-_msw-bypass'
 const activeClientIds = new Set()
 
 self.addEventListener('install', function () {

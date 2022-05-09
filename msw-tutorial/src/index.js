@@ -4,10 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
 // Enable API mocking only in development
 if (process.env.NODE_ENV === "development") {
-  const { worker } = require("./mocks/server");
+  const { worker } = require("./mocks/browser");
 
   worker.start({
     serviceWorker: {
