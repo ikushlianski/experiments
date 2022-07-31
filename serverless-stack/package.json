@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "sst start",
+    "start": "AWS_PROFILE=learning-sst sst start --region eu-west-1",
     "build": "sst build",
     "deploy": "AWS_PROFILE=learning-sst sst deploy --region eu-west-1",
     "remove": "AWS_PROFILE=learning-sst sst remove --region eu-west-1",
