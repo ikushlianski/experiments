@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd node-bash
+cd node-bash || exit
 
 ./git-hooks/pre-commit.mjs

@@ -2,18 +2,24 @@
 
 import { exec } from 'node:child_process'
 
-// import * as os from 'node:os';
-//
-// const {username} = os.userInfo();
-// console.log(`Hello ${username}`);
-
 exec('npm run test', (error, stdout, stderr) => {
+  console.log(stdout)
+
   if (error) {
     console.error(`exec error: ${error}`);
     throw new Error('tests failed!')
   }
 
-  console.log(`stderr: ${stderr}`);
+  console.log('All tests passed\n\n');
+});
 
+exec('git diff --diff-filter=d --name-only --cached | grep -E \'\\.(mjs|js|jsx|ts|tsx)$\'', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    throw new Error('could not get diff!')
+  }
 
+  const files = stdout.split('\n').filter(file => file)
+
+  console.log('files', files)
 });
