@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "postinstall": "npm run hooks",
-    "hooks": "./git-hooks/setup-hooks.sh"
+    "hooks": "sh ./git-hooks/setup-hooks.sh"
   },
   "keywords": [],
   "author": "",
