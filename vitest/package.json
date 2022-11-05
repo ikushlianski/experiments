@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "vitest": "^0.24.5"
+  },
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
