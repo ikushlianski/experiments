@@ -1,2 +1,2 @@
 const a = "some master branch content here"
-const b = "else"
+const b = "else 2"
